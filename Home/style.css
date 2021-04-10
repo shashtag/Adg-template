@@ -1,0 +1,36 @@
+/* defining page size */
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* styling */
+body {
+  background-color: black;
+  color: white;
+  border: 2px solid #143d3d;
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh 5vw 5vh 5vw;
+  border-radius: 50px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* centering content using grid */
+body {
+  place-items: center;
+  display: grid;
+}
+
+/* centering content using flexbox */
+/* body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* responsive image */
+img {
+  max-width: calc(100% - 40px);
+}
