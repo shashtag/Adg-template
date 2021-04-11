@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <title>Components</title>
+</head>
+
+<body>
+  <h1>Components</h1>
+  <section>
+    <h6>Buttons</h6>
+    <div class="container">
+      <p>Rounded Corners</p>
+      <div class="btns">
+        <button class="rounded-corner-btn btn-blu">Button</button><button
+          class="rounded-corner-btn btn-blr">Button</button><button class="rounded-corner-btn btn-blk">Button</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <p>Rounded Buttons</p>
+      <div class="btns">
+        <button class="rounded-btn btn-blu">Button</button>
+        <button class="rounded-btn btn-blr">Button</button>
+        <button class="rounded-btn btn-blk">Button</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h6>Text Fields</h6>
+    <div class="container">
+      <p>Animated Field</p>
+
+      <div class="inp-cont">
+        <input  type="text">
+        <label class="inp-label" >Label</label>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h6>Selectors</h6>
+    <div class="container">
+      <div></div>
+      <div class="chckbxs">
+        <div class="chckbx-cont">
+          <input id="chbx1" type="checkbox" />
+        </div>
+        <div class="chckbx-cont">
+          <input id="chbx2" type="checkbox" checked />
+        </div>
+        <div class="chckbx-cont">
+          <input id="chbx3" type="checkbox" />
+          <label for="chbx3" class="selector-l">Checkbox labeled</label>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div></div>
+      <form>
+        <div class="rdos">
+          <div class="rdo-cont">
+            <input type="radio" name="rdo" value="rdo1" />
+          </div>
+          <div class="rdo-cont">
+            <input type="radio" checked name="rdo" value="rdo2" />
+          </div>
+          <div class="rdo-cont">
+            <input id="rdo3" type="radio" name="rdo" value="rdo3" />
+            <label for="rdo3" class="selector-l">Labeled radio button</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <h6>Sliders</h6>
+    <div class="container">
+      <p>Progress bar</p>
+      <progress id="file" value="32" max="100"></progress>
+    </div>
+    <div class="container">
+      <p>Basic slider</p>
+      <input type="range" min="1" max="100" value="32" class="slider"></input>
+    </div>
+    <div class="container">
+      <p>Labeled sides</p>
+      <div class="slide-cont"><label for="slide2" class="slide-label"> Start </label>
+        <input type="range" min="1" max="100" value="32" class="slider" id="slide2"></input> <label for="slide2"
+          class="slide-label">End </label>
+      </div>
+    </div>
+    <div class="container">
+      <p>Labeled sides</p>
+      <div class="slide-cont-top-label" style="flex-direction: column;">
+        <div style="display: flex;flex-direction: row;width: 363px; margin-bottom: 10px;"><label for="slide2"
+            class="slide-label"> Start </label>
+          <div style="flex-grow: 1;"></div><label for="slide2" class="slide-label">End </label>
+        </div>
+        <input type="range" min="1" max="100" value="32" class="slider" id="slide2"></input>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h6>Popups/Cards</h6>
+    <div class="container">
+      <div></div>
+      <div class="card">
+        <div class="close"></div>
+        <div class="card-title">HackGrid.pkg</div>
+        <div class="card-subtitle">
+          <div> All you need to know to Conquer</div> Hackathons
+        </div>
+        <button class="rounded-btn btn-blu" style="margin-bottom:24px ;">Know More</button>
+        <div class="card-action"> Skip for now</div>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    function createRipple(event) {
+      const button = event.currentTarget;
+      console.log("sdxsds");
+      const circle = document.createElement("span");
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - (button.offsetLeft + radius)}px`;
+      circle.style.top = `${event.clientY - (button.offsetTop + radius)}px`;
+      circle.classList.add("ripple");
+      console.log(circle);
+      const ripple = button.getElementsByClassName("ripple")[0];
+
+      if (ripple) {
+        ripple.remove();
+      }
+      button.appendChild(circle);
+    }
+
+    const buttons = document.getElementsByTagName("button");
+    for (const button of buttons) {
+      button.addEventListener("click", createRipple);
+    }
+  </script>
+</body>
+
+</html>
